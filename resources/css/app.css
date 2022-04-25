@@ -3,14 +3,14 @@
 @import "tailwindcss/utilities";
 
 header {
-    @apply h-15v flex flex-row mx-10 p-6 bg- text-white;
+    @apply h-15v flex flex-row mx-10 p-6 bg-#D13311;
 }
 nav {
-    @apply h-5v flex flex-col mx-10 p-2 bg-amber-100 text-white;
+    @apply h-5v flex flex-col mx-10 p-2 bg-#D0BDB9;
 }
 main {
-    @apply h-70v flex flex-col mx-10 p-2 bg-amber-100 overflow-auto;
+    @apply h-70v flex flex-col mx-10 p-2 bg-white overflow-auto;
 }
 footer {
-    @apply h-10v flex flex-col mx-10 p-2 bg-amber-100 text-white;
+    @apply h-10v flex flex-col mx-10 p-2 bg-#D0BDB9 text-white;
 }
