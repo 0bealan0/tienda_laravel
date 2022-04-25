@@ -16,14 +16,27 @@
         <div class=" container flex flex-wrap justify-between items-center mx-auto">
             @auth
                 {{auth()->user()->name}}
-            <form action="{{route("logout")}}" method="post" class="w-full max-w-sm">
+            <form action="{{route('logout')}}" method="post" class="w-full max-w-sm">
                 @csrf
                <x-button>Logout</x-button>
             </form>
             @endauth
             @guest
+            <form action="{{route('login')}}" method="post" class="w-full max-w-sm">
+                @csrf
+                <x-input name="email" type="email" placeholder="Email"></x-input>
+                <x-input name="password" type="password" placeholder="Password"></x-input>
+                <br/>
                 <x-ancla ref="{{route('login')}}">Login</x-ancla>
                 <x-ancla ref="{{route('register')}}">Registrar</x-ancla>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
             @endguest
         </div>
 </header>
